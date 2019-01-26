@@ -8,3 +8,4 @@ Come up with a way to translate computer science terms into early
    modern english equivalents
 Utilize ACM Digital library to find computer science papers
 Utilize Shakespeare plays for early modern english examples
+Make plentious usage of "Indeed, thou saucy fellow" after any sentence
