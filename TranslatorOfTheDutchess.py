@@ -33,13 +33,6 @@ def dutchess(input):
         'spaghetti code' : 'dirty lightspeak',
         'string' : 'light sequence',
         'syntax' : 'light structure',
-        '' : '',
-        
-        
-      
-
-            
-        
     }
 
     output = dutchess_tongue[input]
