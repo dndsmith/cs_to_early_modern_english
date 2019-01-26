@@ -33,23 +33,21 @@ def dutchess(input):
         'spaghetti code' : 'dirty lightspeak',
         'string' : 'light sequence',
         'syntax' : 'light structure',
-        'with' : 'wi’',
-        'In' : 'I’',
-        'of' : 'o’',
-        'to' : 't’',
-        'it' : '‘t',
-        'it is' : '‘tis',
-        'it was' : '‘twas',
-        'even' : 'e’en',
-        'ever' : 'e’er',
-        'never' : 'ne’er',
+        'with' : 'wi\'',
+        'In' : 'I\'',
+        'of' : 'o\'',
+        'to' : 't\'',
+        'it' : '\'t',
+        'it is' : '\'tis',
+        'it was' : '\'twas',
+        'even' : 'e\'en',
+        'ever' : 'e\'er',
+        'never' : 'ne\'er',
         
         '.' : '. Indeed thou saucy fellow!' 
     }
 
-    output = dutchess_tongue[input]
-
-    return output
+    return dutchess_tongue[input]
 
 if __name__ == '__main__':
     in1 = "you"
