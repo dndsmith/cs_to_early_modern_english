@@ -1,0 +1,10 @@
+REQUIREMENTS
+
+Use AWS
+Use machine learning
+Translate late modern english words into early modern english words
+Translate late modern english phrases into early modern english phrases
+Come up with a way to translate computer science terms into early
+   modern english equivalents
+Utilize ACM Digital library to find computer science papers
+Utilize Shakespeare plays for early modern english examples
