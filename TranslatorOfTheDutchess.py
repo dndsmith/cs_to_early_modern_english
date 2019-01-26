@@ -43,10 +43,8 @@ def dutchess(input):
         'even' : 'e’en',
         'ever' : 'e’er',
         'never' : 'ne’er',
-
         
-        
-        
+        '.' : '. Indeed thou saucy fellow!' 
     }
 
     output = dutchess_tongue[input]
