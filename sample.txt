@@ -1,0 +1,9 @@
+Hello you there!
+Do you want to learn about Computer Science? There are many sections of Computer Science such as:
+Network Programming
+Systems Anaylst
+Software Engineering
+Software Development, etc.
+It's currently a booming industry! You can make bank just being an entry level computer software developer.
+
+
