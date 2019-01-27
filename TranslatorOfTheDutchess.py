@@ -102,7 +102,22 @@ def dutchess(input):
         'and' : 'as well as',
         'AI' : 'witchcraft',
         'coding' : 'lightspeaking',
-        '.' : ', Indeed thy saucy fellow!'
+        '!' : ', Indeed thy saucy fellow!',
+        'has' : 'hast',
+        'have' : 'hath',
+        'will' : 'shall',
+        'fight' : 'square',
+        'them' : 'those folk',
+        'hello' : 'holla',
+        'notebook' : 'table',
+        'my' : 'mine',
+        'pretty' : 'quaint',
+        'do' : 'dost',
+        'see' : 'seeth,
+        'they' : 'those gents',
+        'need' : 'needeth',
+        'anything' : 'aught',
+        'why' : 'wherefore'
     }
     if input.lower() in dutchess_tongue:
         return dutchess_tongue[input.lower()]
