@@ -101,7 +101,8 @@ def dutchess(input):
         'brother' : 'bretheren',
         'and' : 'as well as',
         'AI' : 'witchcraft',
-        'coding' : 'lightspeaking'
+        'coding' : 'lightspeaking',
+        '.' : '. Indeed thy saucy fellow'
     }
     if input.lower() in dutchess_tongue:
         return dutchess_tongue[input.lower()]
