@@ -20,6 +20,7 @@ def dutchess(input):
         'computer' : 'light calculator',
         'science' : 'alchemy',
         'digital' : 'realm of light',
+        'software' : 'light realm',
         'syntax error' : 'lapse in judgement',
         'programmer' : 'light alchemist',
         'cloud' : 'heavens',
