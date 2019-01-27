@@ -10,7 +10,7 @@ import os
 
 def dutchess(input):
     dutchess_tongue = {
-        'you': 'thou',
+         'you': 'thou',
         'your': 'thy',
         'yours' : 'thine',
         'are' : 'art',
@@ -27,6 +27,8 @@ def dutchess(input):
         'software' : 'light realm',
         'syntax error' : 'lapse in judgement',
         'programmer' : 'light alchemist',
+        'developer' :'light alchemist',
+        'scientist' : 'alchemist',
         'cloud' : 'heavens',
         'cloud storage' : 'heavens vault',
         'data' : 'knowledge',
@@ -94,7 +96,9 @@ def dutchess(input):
         'rom' : 'noblemans memory',
         'terminal' : 'ambassador of light',
         'brother' : 'bretheren',
-        'and' : 'as well as'
+        'and' : 'as well as',
+        'AI' : 'witchcraft',
+        'coding' : 'lightspeaking'
     }
     if input.lower() in dutchess_tongue:
         return dutchess_tongue[input.lower()]
