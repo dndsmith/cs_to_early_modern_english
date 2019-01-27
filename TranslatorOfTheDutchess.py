@@ -132,8 +132,8 @@ if __name__ == '__main__':
                 in1 = re.findall(r"[\w']+|[.,!?;]", line)
 
                 for i in in1:
-                    storeString = dutchess(i) + ' '
-               #     outfile.write(rendered)
+                    storeString += dutchess(i) + ' '
+                  #  outfile.write(storeString)
 
                 #A pause after a sentence
                 rendered = '<speak><amazon:effect name=\\"drc\\">' + storeString.strip() + '<break time=\\"1s\\"/></amazon:effect></speak>'
