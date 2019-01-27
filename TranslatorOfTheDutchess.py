@@ -31,6 +31,7 @@ def dutchess(input):
         'syntax error' : 'lapse in judgement',
         'programmer' : 'light alchemist',
         'developer' :'light alchemist',
+        'coder' :'light alchemist',
         'scientist' : 'alchemist',
         'cloud' : 'heavens',
         'cloud storage' : 'heavens vault',
