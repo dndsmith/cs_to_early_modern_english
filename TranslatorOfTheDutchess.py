@@ -124,7 +124,7 @@ if __name__ == '__main__':
             rendered = ''
             storeString = ''
             line = line.replace('"', '\\"')
-            command = 'aws polly synthesize-speech --text-type ssml --output-format "mp3" --voice-id "Salli" --text "{0}" {1}'
+            command = 'aws polly synthesize-speech --text-type ssml --output-format "mp3" --voice-id "Brian" --text "{0}" {1}'
             if '\r\n' == line:
                 #A pause after a paragraph
                 rendered = '<speak><break time= "2s"/></speak>'
