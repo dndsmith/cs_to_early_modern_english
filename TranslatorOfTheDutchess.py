@@ -131,13 +131,21 @@ if __name__ == '__main__':
     cnt = 0
     file_names = ''
     s3 = boto3.client('s3')
+    response = dict()
+    result = dict()
+    comprehend = boto3.client(service_name='comprehend', region_name='us-east-2')
+    translate = boto3.client(service_name='translate', region_name='us-east-2', use_ssl=True)
 
-    # comprehend = boto3.client(service_name='comprehend', region_name='region')
 
     with open(sys.argv[1], 'r') as f:
-        #text = file.read().replace('\n', ' ')
-        #pattern = re.compile(r'(\s+|[{}])'.format(re.escape(punctuation)))
         for line in f:
+            response = boto3.client(service_name='comprehend', region_name='us-east-2').detect_dominant_language(Text=line)
+            print(response["Languages"][0]["LanguageCode"])
+
+            if response["Languages"][0]["LanguageCode"] != 'en':
+                result = translate.translate_text(Text=line,
+                                                  SourceLanguageCode=response["Languages"][0]["LanguageCode"], TargetLanguageCode='en')
+                line = result['TranslatedText']
             rendered = ''
             storeString = ''
             line = line.replace('"', '\\"')
