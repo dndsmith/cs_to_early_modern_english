@@ -93,7 +93,8 @@ def dutchess(input):
         'ram' : 'knaves memory',
         'rom' : 'noblemans memory',
         'terminal' : 'ambassador of light',
-        'brother' : 'bretheren'
+        'brother' : 'bretheren',
+        'and' : 'as well as'
     }
     if input.lower() in dutchess_tongue:
         return dutchess_tongue[input.lower()]
