@@ -1,7 +1,7 @@
 Thank you, Mr. Computer Scientist! You are very cool!
-I have yet to find a bug in your code. You are an exemplary
-brother. Your monitor is filled with saucy fellows. I never
-see a syntax error. Your hardware is no exception.
+I have yet to find a bug in your code. You are an exemplary brother.
+Your monitor is filled with saucy fellows. I never see a syntax error.
+Your hardware is no exception.
 O, developer, sweet programmer, how for are you?
 Can you debug the code in my cloud program? My system needs your assistance.
 Bit, byte, or binary: you name it, you claim it.
