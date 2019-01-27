@@ -126,7 +126,7 @@ def dutchess(input):
         'anything' : 'aught',
         'why' : 'wherefore',
         'aws' : 'yonder thither services',
-        'server' : 'that which provideth'
+        'server' : 'that which provideth',
         'google' : 'boundless wisdom',
         'math' : 'maths',
         'hack' : 'heavy blow',
