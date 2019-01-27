@@ -115,6 +115,7 @@ if __name__ == '__main__':
     rendered = ''
     cnt = 0
     file_names = ''
+    s3 = boto3.client('s3')
 
     # comprehend = boto3.client(service_name='comprehend', region_name='region')
 
@@ -149,6 +150,11 @@ if __name__ == '__main__':
     print file_names
     execute_command = 'cat ' + file_names + '>result.mp3'
     subprocess.call(execute_command, shell=True)
+
+    # upload result.mp3 file to s3
+    filename = 'result.mp3'
+    bucketname = 'cstoeme'
+    s3.upload_file(filename, bucketname, filename)
 
     execute_command = 'rm ' + file_names
     print 'Removing temporary files: ' + execute_command
