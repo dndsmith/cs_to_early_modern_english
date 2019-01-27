@@ -16,10 +16,15 @@ def dutchess(input):
         'are' : 'art',
         'monitor' : 'portal of light',
         'bug' : 'Satans Dirty Trick',
+        'anomoly' : 'Satans Dirty Trick',
+        'defect' : 'Satans Dirty Trick',
+        'error' : 'Satans Dirty Trick',
+        'exception' : 'Satans Dirty Trick',
         'code' : 'lightspeak',
         'computer' : 'light calculator',
         'science' : 'alchemy',
         'digital' : 'realm of light',
+        'software' : 'light realm',
         'syntax error' : 'lapse in judgement',
         'programmer' : 'light alchemist',
         'cloud' : 'heavens',
@@ -88,7 +93,8 @@ def dutchess(input):
         'ram' : 'knaves memory',
         'rom' : 'noblemans memory',
         'terminal' : 'ambassador of light',
-        'brother' : 'bretheren'
+        'brother' : 'bretheren',
+        'and' : 'as well as'
     }
     if input.lower() in dutchess_tongue:
         return dutchess_tongue[input.lower()]
