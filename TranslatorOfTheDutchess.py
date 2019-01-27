@@ -10,7 +10,7 @@ import os
 
 def dutchess(input):
     dutchess_tongue = {
-         'you': 'thou',
+        'you': 'thou',
         'your': 'thy',
         'yours' : 'thine',
         'are' : 'art',
@@ -116,17 +116,16 @@ if __name__ == '__main__':
         #text = file.read().replace('\n', ' ')
         #pattern = re.compile(r'(\s+|[{}])'.format(re.escape(punctuation)))
         for line in file:
-            for word in line.split():
-                #pattern.split(word)
-                in1 = dutchess(word)
-                storeString = storeString + ' '+ in1
+            in1 = re.findall(r"[\w']+|[.,!?;]", line)
+
+            for i in in1:
+                storeString = dutchess(i)
+                storeString = storeString + ' '
+                outfile.write(storeString)
 
     #print('Calling DetectKeyPhrases')
     #print(json.dumps(comprehend.detect_key_phrases(Text=text, LanguageCode='en'), sort_keys=True, indent=4))
     #print('End of DetectKeyPhrases\n')
-
-    outfile.write(storeString)
-    print(storeString)
 
     # Create a client using the credentials and region defined in the [adminuser]
     # section of the AWS credentials file (~/.aws/credentials).
