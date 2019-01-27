@@ -5,6 +5,7 @@ from boto3 import Session
 from botocore.exceptions import BotoCoreError, ClientError
 from contextlib import closing
 import subprocess
+import codecs
 from tempfile import gettempdir
 import os
 import re
@@ -107,22 +108,49 @@ def dutchess(input):
     return input
 
 if __name__ == '__main__':
-    file = sys.argv[1]
     outfile = open("output.txt", 'w')
     storeString = ''
+    rendered = ''
+    cnt = 0
+    file_names = ''
 
     # comprehend = boto3.client(service_name='comprehend', region_name='region')
 
-    with open(sys.argv[1], 'r') as file:
+    with open(sys.argv[1], 'r') as f:
         #text = file.read().replace('\n', ' ')
         #pattern = re.compile(r'(\s+|[{}])'.format(re.escape(punctuation)))
-        for line in file:
-            in1 = re.findall(r"[\w']+|[.,!?;]", line)
+        for line in f:
+            rendered = ''
+            storeString = ''
+            line = line.replace('"', '\\"')
+            command = 'aws polly synthesize-speech --text-type ssml --output-format "mp3" --voice-id "Salli" --text "{0}" {1}'
+            if '\r\n' == line:
+                #A pause after a paragraph
+                rendered = '<speak><break time= "2s"/></speak>'
+            else:
+                in1 = re.findall(r"[\w']+|[.,!?;]", line)
 
-            for i in in1:
-                storeString = dutchess(i)
-                storeString = storeString + ' '
-                outfile.write(storeString)
+                for i in in1:
+                    storeString = dutchess(i) + ' '
+               #     outfile.write(rendered)
+
+                #A pause after a sentence
+                rendered = '<speak><amazon:effect name=\\"drc\\">' + storeString.strip() + '<break time=\\"1s\\"/></amazon:effect></speak>'
+    
+            file_name = ' polly_out{0}.mp3'.format(u''.join(str(cnt)).encode('utf-8'))
+            cnt += 1
+            command = command.format(rendered.encode('utf-8'), file_name)
+            file_names += file_name
+            print command
+            subprocess.call(command, shell=True)
+
+    print file_names
+    execute_command = 'cat ' + file_names + '>result.mp3'
+    subprocess.call(execute_command, shell=True)
+
+    execute_command = 'rm ' + file_names
+    print 'Removing temporary files: ' + execute_command
+    subprocess.call(execute_command, shell=True)
 
     #print('Calling DetectKeyPhrases')
     #print(json.dumps(comprehend.detect_key_phrases(Text=text, LanguageCode='en'), sort_keys=True, indent=4))
@@ -130,6 +158,7 @@ if __name__ == '__main__':
 
     # Create a client using the credentials and region defined in the [adminuser]
     # section of the AWS credentials file (~/.aws/credentials).
+    """
     session = Session(profile_name="default")
     polly = session.client("polly")
 
@@ -165,9 +194,10 @@ if __name__ == '__main__':
         sys.exit(-1)
 
     # Play the audio using the platform's default player
+
     if sys.platform == "win32":
         os.startfile(output)
     else:
         # the following works on Mac and Linux. (Darwin = mac, xdg-open = linux).
         opener = "open" if sys.platform == "darwin" else "xdg-open"
-        subprocess.call([opener, output])
+        subprocess.call([opener, output])"""
