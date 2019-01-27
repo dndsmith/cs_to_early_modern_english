@@ -10,7 +10,7 @@ import os
 
 def dutchess(input):
     dutchess_tongue = {
-                'you': 'thou',
+        'you': 'thou',
         'your': 'thy',
         'yours' : 'thine',
         'are' : 'art',
