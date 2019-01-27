@@ -7,6 +7,7 @@ from contextlib import closing
 import subprocess
 from tempfile import gettempdir
 import os
+import re
 
 def dutchess(input):
     dutchess_tongue = {
@@ -15,11 +16,11 @@ def dutchess(input):
         'yours' : 'thine',
         'are' : 'art',
         'monitor' : 'portal of light',
-        'bug' : 'Satans Dirty Trick',
-        'anomoly' : 'Satans Dirty Trick',
-        'defect' : 'Satans Dirty Trick',
-        'error' : 'Satans Dirty Trick',
-        'exception' : 'Satans Dirty Trick',
+        'bug' : 'Satan\'s Dirty Trick',
+        'anomoly' : 'Satan\'s Dirty Trick',
+        'defect' : 'Satan\'s Dirty Trick',
+        'error' : 'Satan\'s Dirty Trick',
+        'exception' : 'Satan\'s Dirty Trick',
         'code' : 'lightspeak',
         'computer' : 'light calculator',
         'science' : 'alchemy',
