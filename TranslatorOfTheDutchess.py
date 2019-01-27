@@ -1,3 +1,9 @@
+import boto3
+import json
+import sys
+import re
+from string import punctuation
+
 def dutchess(input):
     dutchess_tongue = {
         'you': 'thou',
@@ -11,7 +17,7 @@ def dutchess(input):
         'science' : 'alchemy',
         'digital' : 'realm of light',
         'syntax error' : 'lapse in judgement',
-        'programmer' : 'light alchemist', 
+        'programmer' : 'light alchemist',
         'cloud' : 'heavens',
         'cloud storage' : 'heavens vault',
         'data' : 'knowledge',
@@ -43,13 +49,26 @@ def dutchess(input):
         'even' : 'e\'en',
         'ever' : 'e\'er',
         'never' : 'ne\'er',
-        
-        '.' : '. Indeed thou saucy fellow!' 
     }
+    if input in dutchess_tongue:
+        return dutchess_tongue[input]
 
-    return dutchess_tongue[input]
+    return input
 
 if __name__ == '__main__':
-    in1 = "you"
-    output = dutchess(in1)
-    print(output)
+    file = sys.argv[1]
+
+    # comprehend = boto3.client(service_name='comprehend', region_name='region')
+
+    with open(sys.argv[1], 'r') as file:
+        #text = file.read().replace('\n', ' ')
+        #pattern = re.compile(r'(\s+|[{}])'.format(re.escape(punctuation)))
+        for line in file:
+            for word in line.split():
+                #pattern.split(word)
+                in1 = dutchess(word)
+                print(in1)
+
+    #print('Calling DetectKeyPhrases')
+    #print(json.dumps(comprehend.detect_key_phrases(Text=text, LanguageCode='en'), sort_keys=True, indent=4))
+    #print('End of DetectKeyPhrases\n')
