@@ -113,7 +113,7 @@ def dutchess(input):
         'my' : 'mine',
         'pretty' : 'quaint',
         'do' : 'dost',
-        'see' : 'seeth,
+        'see' : 'seeth',
         'they' : 'those gents',
         'need' : 'needeth',
         'anything' : 'aught',
@@ -174,6 +174,9 @@ if __name__ == '__main__':
     execute_command = 'rm ' + file_names
     print 'Removing temporary files: ' + execute_command
     subprocess.call(execute_command, shell=True)
+
+
+    # THE BELOW CODE IS NO LONGER RELEVANT
 
     #print('Calling DetectKeyPhrases')
     #print(json.dumps(comprehend.detect_key_phrases(Text=text, LanguageCode='en'), sort_keys=True, indent=4))
