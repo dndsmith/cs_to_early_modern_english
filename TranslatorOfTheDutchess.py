@@ -134,7 +134,7 @@ if __name__ == '__main__':
 
                 for i in in1:
                     storeString += dutchess(i) + ' '
-                  #  outfile.write(storeString)
+                    outfile.write(dutchess(i) + ' ')
 
                 #A pause after a sentence
                 rendered = '<speak><amazon:effect name=\\"drc\\">' + storeString.strip() + '<break time=\\"1s\\"/></amazon:effect></speak>'
