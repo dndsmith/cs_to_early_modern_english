@@ -107,7 +107,7 @@ def dutchess(input):
         'brother' : 'bretheren',
         'and' : 'as well as',
         'learning' : 'acquisition',
-        'AI' : 'witchcraft',
+        'ai' : 'witchcraft',
         'coding' : 'lightspeaking',
         '!' : ', Indeed thy saucy fellow!',
         'has' : 'hast',
@@ -132,7 +132,8 @@ def dutchess(input):
         'hack' : 'heavy blow',
         'hacker' : 'filthy trojan',
         'hackers' : 'filthy trojans',
-        'cuhackit' : 'assembly of inquisitive trojans'
+        'cuhackit' : 'assembly of inquisitive trojans',
+        'artificial' : 'feigned'
     }
     if input.lower() in dutchess_tongue:
         return dutchess_tongue[input.lower()]
